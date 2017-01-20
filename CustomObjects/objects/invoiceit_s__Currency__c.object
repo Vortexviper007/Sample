@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <customHelpPage>invoiceit_s__support</customHelpPage>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Stores the different types of Currencies like GBP, USD etc.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>invoiceit_s__Currency_Page</fullName>
+        <description>This is used in Currency Page</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>invoiceit_s__Currency_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>invoiceit_s__Currency_Symbol__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Currency Page</label>
+    </fieldSets>
+    <fields>
+        <fullName>invoiceit_s__Auto_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Obsolete Auto Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>invoiceit_s__Currency_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the Name of the Currency</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates the Name of the Currency</inlineHelpText>
+        <label>Currency Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>invoiceit_s__Currency_Symbol__c</fullName>
+        <defaultValue>$Label.invoiceit_s__ButtonNew</defaultValue>
+        <deprecated>false</deprecated>
+        <description>It stores the Symbol of one particular Currency.Say for example &apos;$&apos; for USD</description>
+        <externalId>false</externalId>
+        <inlineHelpText>It stores the Symbol of one particular Currency.Say for example &apos;$&apos; for USD</inlineHelpText>
+        <label>Currency Symbol</label>
+        <length>10</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>invoiceit_s__Symbol__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>It stores the symbol of one particular currency.Say for example &apos;$&apos; for USD</description>
+        <externalId>false</externalId>
+        <inlineHelpText>It stores the symbol of one particular currency.Say for example &apos;$&apos; for USD</inlineHelpText>
+        <label>Obsolete_Symbol</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Currency</label>
+    <listViews>
+        <fullName>invoiceit_s__All</fullName>
+        <columns>NAME</columns>
+        <columns>invoiceit_s__Currency_Name__c</columns>
+        <columns>invoiceit_s__Currency_Symbol__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Currency ISO Code</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Currencies</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>invoiceit_s__Currency_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>invoiceit_s__Currency_Symbol__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>invoiceit_s__Currency_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>invoiceit_s__Currency_Symbol__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>invoiceit_s__Currency_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>invoiceit_s__Currency_Symbol__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>invoiceit_s__Currency_Name__c</searchFilterFields>
+        <searchFilterFields>invoiceit_s__Currency_Symbol__c</searchFilterFields>
+        <searchResultsAdditionalFields>invoiceit_s__Currency_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>invoiceit_s__Currency_Symbol__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>invoiceit_s__Currency_ISO_Code_Cannot_be_changed</fullName>
+        <active>true</active>
+        <description>Currency ISO Code Cannot be changed</description>
+        <errorConditionFormula>ISCHANGED(Name)</errorConditionFormula>
+        <errorDisplayField>Name</errorDisplayField>
+        <errorMessage>Currency ISO Code cannot be change</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>invoiceit_s__Currency_Symbol_Cannot_Be_Changed</fullName>
+        <active>true</active>
+        <description>Currency Symbol Cannot Be Changed</description>
+        <errorConditionFormula>ISCHANGED( invoiceit_s__Currency_Symbol__c )</errorConditionFormula>
+        <errorDisplayField>invoiceit_s__Currency_Symbol__c</errorDisplayField>
+        <errorMessage>Currency Symbol cannot be changed</errorMessage>
+    </validationRules>
+</CustomObject>

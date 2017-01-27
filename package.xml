@@ -4,6 +4,10 @@
         <members>*</members>
         <name>CustomField</name>
     </types>
+	<types>
+        <members>*</members>
+        <name>ValidationRule</name>
+    </types>
     <types>
         <members>Opportunity</members>
         <name>CustomObject</name>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fields>
+        <fullName>ApprovalStatus__c</fullName>
+        <description>Indicates the status of a quote based on approval interactions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates the status of a quote based on approval interactions.</inlineHelpText>
+        <label>ApprovalStatus</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Recalled</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Display_Annual_Price__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Conditionally displays the annual price on the quote output document. Default value is checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Conditionally displays the annual price on the quote output document. Default value is checked.</inlineHelpText>
+        <label>Display Annual Price</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Display_List_Price__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Conditionally displays the list price on the quote output document. Default value is checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Conditionally displays the list price on the quote output document. Default value is checked.</inlineHelpText>
+        <label>Display List Price</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Display_Percent_Discount__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Conditionally displays the percent discount on the quote output document. Default value is checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Conditionally displays the percent discount on the quote output document. Default value is checked.</inlineHelpText>
+        <label>Display Percent Discount</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>First_Tier_Approver__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(SBQQ__SalesRep__r.ManagerId != &quot;&quot;, SBQQ__SalesRep__r.ManagerId, &quot;N/A&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>First Tier Approver</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Negative_or_Zero_Quantity_Line_Items__c</fullName>
+        <description>Displays the number of Negative or Zero Quantity Quote Lines present on a quote.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Displays the number of Negative or Zero Quantity Quote Lines present on a quote.</inlineHelpText>
+        <label>Negative or Zero Quantity Line Items</label>
+        <summaryFilterItems>
+            <field>SBQQ__QuoteLine__c.SBQQ__Quantity__c</field>
+            <operation>lessOrEqual</operation>
+            <value>0</value>
+        </summaryFilterItems>
+        <summaryForeignKey>SBQQ__QuoteLine__c.SBQQ__Quote__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Notes_to_Manager__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes to Manager</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Record_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>SBQQ__Opportunity2__r.RecordType.Name</formula>
+        <label>Opportunity Record Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quote_Level_Approval_Not_Required__c</fullName>
+        <description>Used to determine if an approval is required at the quote level. Based on payment terms and Total Quote Discount Percentage.</description>
+        <externalId>false</externalId>
+        <formula>IF(
+AND
+( 
+Total_Quote_Discount_Percentage__c &lt;=0.05, 
+OR
+( 
+TEXT(SBQQ__PaymentTerms__c)= &quot;Net 30&quot;, 
+TEXT(SBQQ__PaymentTerms__c)= &quot;Net 15&quot;
+)),
+True,False)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Used to determine if an approval is required at the quote level. Based on payment terms and Total Quote Discount Percentage.</inlineHelpText>
+        <label>Quote Level Approval Not Required</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Second_Tier_Approver__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(SBQQ__SalesRep__r.Manager.ManagerId != &quot;&quot;, SBQQ__SalesRep__r.Manager.ManagerId , &quot;N/A&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Second Tier Approver</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SubmittedDate__c</fullName>
+        <description>The date on which a quote was submitted for approval.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date on which a quote was submitted for approval.</inlineHelpText>
+        <label>SubmittedDate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SubmittedUser__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>SubmittedUser</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Quotes4</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Total_Quote_Discount_Percentage__c</fullName>
+        <description>This field calculates the Quote Level Discount Percentage based on the Total Customer Discount Amount Field and the Regular Amount field. Used for Advanced Approvals.</description>
+        <externalId>false</externalId>
+        <formula>SBQQ__TotalCustomerDiscountAmount__c/ SBQQ__ListAmount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This field calculates the Quote Level Discount Percentage based on the Total Customer Discount Amount Field and the Regular Amount field. Used for Advanced Approvals.</inlineHelpText>
+        <label>Total Quote Discount Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+</CustomObject>

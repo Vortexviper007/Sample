@@ -1,0 +1,50 @@
+<messaging:emailTemplate subject="{!relatedTo.Quote__r.SBQQ__SalesRep__r.FirstName} {!relatedTo.Quote__r.SBQQ__SalesRep__r.LastName} Requests a Quote Approval for {!relatedTo.Quote__r.SBQQ__Account__r.Name} for Quote {!relatedTo.Quote__r.Name}" recipientType="User"
+relatedToType="sbaa__Approval__c">
+<messaging:HtmlEmailBody >
+<html>
+<body>
+
+<apex:image value="https://turnitin--fullcopy--c.cs1.content.force.com/servlet/servlet.ImageServer?id=015S0000000XkFF&oid=00DS0000003ED2G&lastMod=1484931496000" 
+/>
+
+<b></b> 
+<p><br/></p>
+
+Hello,
+
+<p>{!relatedTo.Quote__r.SBQQ__SalesRep__r.FirstName} {!relatedTo.Quote__r.SBQQ__SalesRep__r.LastName} is requesting your approval for a Quote, please see below.<br/>
+
+<br/>
+
+<b>Quote Name:</b>&nbsp;<apex:outputLink value="https://turnitin--fullcopy.cs1.my.salesforce.com/{!relatedTo.Quote__r.Id}" >{!relatedTo.Quote__r.Name}</apex:outputLink><br/>
+
+<b>Opportunity Name:</b>&nbsp;<apex:outputLink value="https://turnitin--fullcopy.cs1.my.salesforce.com/{!relatedTo.Quote__r.SBQQ__Opportunity2__r.Id}" >{!relatedTo.Quote__r.SBQQ__Opportunity2__r.Name}</apex:outputLink><br/>
+
+<b>Opportunity Owner: </b>{!relatedTo.Quote__r.SBQQ__Opportunity2__r.Owner.Name}<br/>
+
+<b>Payment Terms: </b>{!relatedTo.Quote__r.SBQQ__PaymentTerms__c}<br/>
+
+<b>Total Quote Discount: </b>{!relatedTo.Quote__r.Total_Quote_Discount_Percentage__c}<br/>
+
+<b>Notes to the Manager: </b>{!relatedTo.Quote__r.Notes_to_Manager__c}<br/>
+
+<p><b>Next Step:</b> To approve or reject this request, reply to this email with the word APPROVE, APPROVED, YES, REJECT, REJECTED, or NO in the first line of the email message, or click on one of these links:&nbsp;&nbsp;<apex:outputLink value="{!LEFT($Api.Partner_Server_URL_140,FIND('.com',$Api.Partner_Server_URL_140)+4)+'apex/SBAA__Approve?id='+relatedTo.Id}">Approve</apex:outputLink>&nbsp;&nbsp;&nbsp;<apex:outputLink value="{!LEFT($Api.Partner_Server_URL_140,FIND('.com',$Api.Partner_Server_URL_140)+4)+'apex/SBAA__Reject?id='+relatedTo.Id}">Reject</apex:outputLink><br/></p>
+</p>
+
+<p>
+<b>Approvals:</b><br/>
+<sbaa:relatedList recordId="{!relatedTo.Quote__c}" relationshipName="Approvals__r" fieldSetName="Approval_Request_Email"/>
+</p>
+
+<p>
+<b>Quote Line Items:</b><br/>
+
+<sbaa:relatedList recordId="{!relatedTo.Quote__c}" relationshipName="SBQQ__LineItems__r" fieldSetName="Approval_Request"/>
+
+</p>
+
+<p style="color:white"><apex:outputText value="{!relatedTo.Id}"/></p>
+</body>
+</html>
+</messaging:HtmlEmailBody>
+</messaging:emailTemplate>

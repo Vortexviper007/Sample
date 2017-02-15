@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <webLinks>
+        <fullName>Preview_Approval</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Preview Approval</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/sbaa__PreviewApprovals?Id={!SBQQ__Quote__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Recall_Approval</fullName>
+        <availability>online</availability>
+        <description>If an approval request is in progress, this button recalls the approval and stops the approval process.</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Recall Approval</masterLabel>
+        <openType>sidebar</openType>
+        <page>RecallQuote</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit_for_Approval</fullName>
+        <availability>online</availability>
+        <description>Submits a quote for approval.</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Submit for Approval</masterLabel>
+        <openType>sidebar</openType>
+        <page>SubmitQuote</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

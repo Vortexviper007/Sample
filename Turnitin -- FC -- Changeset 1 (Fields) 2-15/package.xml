@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ATG Changeset 1</fullName>
+    <description>ATG Changeset for migration. Includes custom fields, field sets, process builders, and public groups</description>
+    <types>
+        <members>SBQQ__QuoteLine__c.Bundle_Group__c</members>
+        <members>SBQQ__QuoteLine__c.RollupText__c</members>
+        <members>SBQQ__QuoteLine__c.Unsegmented_Product__c</members>
+        <members>SBQQ__Quote__c.ApprovalStatus__c</members>
+        <members>SBQQ__Quote__c.Display_Annual_Price__c</members>
+        <members>SBQQ__Quote__c.Display_List_Price__c</members>
+        <members>SBQQ__Quote__c.Display_Percent_Discount__c</members>
+        <members>SBQQ__Quote__c.First_Tier_Approver__c</members>
+        <members>SBQQ__Quote__c.Negative_or_Zero_Quantity_Line_Items__c</members>
+        <members>SBQQ__Quote__c.Notes_to_Manager__c</members>
+        <members>SBQQ__Quote__c.Opportunity_Record_Type__c</members>
+        <members>SBQQ__Quote__c.Quote_Level_Approval_Not_Required__c</members>
+        <members>SBQQ__Quote__c.Second_Tier_Approver__c</members>
+        <members>SBQQ__Quote__c.SubmittedDate__c</members>
+        <members>SBQQ__Quote__c.SubmittedUser__c</members>
+        <members>SBQQ__Quote__c.Total_Quote_Discount_Percentage__c</members>
+        <members>sbaa__Approval__c.Quote__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>SBQQ__QuoteLine__c.Approval_Request</members>
+        <members>sbaa__Approval__c.Approval_Request_Email</members>
+        <name>FieldSet</name>
+    </types>
+    <types>
+        <members>Adv_Approvals_Status_and_Record_Update-2</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>Order_Processing_Group</members>
+        <name>Group</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>SBQQ__Quote__c.Update_Quote_Type</members>
+        <members>SBQQ__Quote__c.Update_Quote_Type_For_New_Business</members>
+        <name>WorkflowFieldUpdate</name>
+    </types>
+    <types>
+        <members>SBQQ__Quote__c.Change Quote type to renewal</members>
+        <members>SBQQ__Quote__c.Change QuoteType For New Business Opportunity</members>
+        <name>WorkflowRule</name>
+    </types>
+    <version>38.0</version>
+</Package>

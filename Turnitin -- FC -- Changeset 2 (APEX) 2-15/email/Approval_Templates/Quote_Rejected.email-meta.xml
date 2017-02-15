@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>38.0</apiVersion>
+    <available>true</available>
+    <description>This template is used when an approver rejects a quote.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Quote Rejected</name>
+    <packageVersions>
+        <majorNumber>3</majorNumber>
+        <minorNumber>3</minorNumber>
+        <namespace>sbaa</namespace>
+    </packageVersions>
+    <style>none</style>
+    <type>visualforce</type>
+</EmailTemplate>

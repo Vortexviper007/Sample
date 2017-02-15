@@ -1,0 +1,32 @@
+<messaging:emailTemplate subject="Quote Approval: {!relatedTo.Quote__r.SBQQ__Opportunity2__r.Name} REJECTED"
+relatedToType="sbaa__Approval__c">
+<messaging:HtmlEmailBody >
+<html>
+<body>
+
+<apex:image value="https://turnitin--fullcopy--c.cs1.content.force.com/servlet/servlet.ImageServer?id=015S0000000XkFF&oid=00DS0000003ED2G&lastMod=1484931496000" 
+/>
+
+<b></b>
+<p></p><br/>
+
+Hello {!relatedTo.Quote__r.SBQQ__SalesRep__r.Name}, 
+
+<p> Your quote for customer {!relatedTo.Quote__r.SBQQ__Account__r.Name} has been rejected for the below reason. Please revise the quote as needed and re-submit for approval.
+</p>
+
+<b>Quote Rejected Comments:</b> {!relatedTo.sbaa__CommentsLong__c}
+
+<p><b>Quote:</b>&nbsp;<apex:outputLink value="https://turnitin--fullcopy--c.cs1.content.force.com/{!relatedTo.Quote__r.Id}" 
+>{!relatedTo.Quote__r.Name}</apex:outputLink></p>
+<p><b>Account:</b>&nbsp;<apex:outputLink value="https://turnitin--fullcopy--c.cs1.content.force.com/{!relatedTo.Quote__r.SBQQ__Account__r.Id}" 
+>{!relatedTo.Quote__r.SBQQ__Account__r.Name}</apex:outputLink> </p>
+<p><b>Opportunity:</b>&nbsp;<apex:outputLink value="https://turnitin--fullcopy--c.cs1.content.force.com/{!relatedTo.Quote__r.SBQQ__Opportunity2__r.Id}" 
+>{!relatedTo.Quote__r.SBQQ__Opportunity2__r.Name}</apex:outputLink> </p>
+
+<p style="color:white"><apex:outputText value="{!relatedTo.Id}"/></p>
+
+</body>
+</html>
+</messaging:HtmlEmailBody>
+</messaging:emailTemplate>
